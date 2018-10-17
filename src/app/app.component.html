@@ -17,4 +17,57 @@
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
 </ul>
-
+<hr>
+<h2>Interpolation</h2>
+<p>{{myObject.location}}</p>
+<p *ngIf="myObject.location=='Rochester, NY'">Location is Rochester, NY</p>
+<p *ngIf="myObject.name=='Rochester, NY'; else tmpl1">Name is Rochester, NY</p>
+<ng-template #tmpl1>tmpl1: Name is {{myObject.name}}</ng-template>
+<!--<br><br>
+<div *ngIf="myObject.other; then tmpl2; else tmpl3"></div>
+<ng-template #tmpl2>tmpl2</ng-template>
+<ng-template #tmpl3>tmpl3</ng-template>-->
+<hr>
+<h2>Class item array that exists:</h2>
+<p *ngIf="myArray">MyArray exists</p>
+<ul>
+  <li *ngFor="let arr of myArray">{{arr}}</li>
+</ul>
+<hr>
+<!--<h2>Class item array that doesn't exist:</h2>
+<p *ngIf="somethingThatDoesntExist">somethingThatDoesntExist does not exist</p>
+<ul>
+  <li *ngFor="let arr of somethingThatDoesntExist">{{arr}}</li>
+</ul>
+<hr>-->
+<h2>Property Binding of Sad Logo</h2>
+<img src="{{angularLogo}}" width="150" height="150">
+<img [src]="angularLogo" width="150" height="150">
+<img bind-src="angularLogo" width="150" height="150">
+<hr>
+<h2>Property Binding on disabled</h2>
+<!--<button [disabled]="noButtonStatus">My Button with Fake Button Status will stay enabled</button>
+<br><br>-->
+<button [disabled]="buttonStatus">My Button with Boolean Button Status</button>
+<br><br>
+<button [disabled]="buttonStatus2=='red'">My Button with String Button Status</button>
+<hr>
+<h2>Event Binding - Use parenthesis</h2>
+<button (click)="myEvent($event)">My Button with Event Binding/Click Handler</button>
+<hr>
+<h2 [class]="cssTitle">CSS Class Binding</h2>
+<h2 [class.redTitle]="cssTitleBool">CSS Class Binding 2</h2>
+<h2 [ngClass]="cssTitleClasses">CSS Class Binding 3</h2>
+<hr>
+<h2 [style.color]="titleStyle">Style Binding</h2>
+<!--<h2 [style.color]="titleStyleThatDoesntExist ? 'blue': 'orange'">Style Binding 2</h2>-->
+<h2 [style.color]="titleStyleBool ? 'blue': 'orange'">Style Binding 3</h2>
+<h2 [ngStyle]="titleStyles">Style Binding 4</h2>
+<hr>
+<h2>Services</h2>
+<p>{{someProperty}}</p>
+<hr>
+<h2>Animations</h2>
+<p [@myAnimation]="animationState" (click)="animateMe()" [class]="animationClass">Animate Me</p>
+<hr>
+<app-my-new-component></app-my-new-component>

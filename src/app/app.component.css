@@ -1,0 +1,20 @@
+h2 {
+    text-decoration: underline;
+}
+
+.redTitle {
+    color: red;
+}
+
+.largeTitle {
+    font-size: 2em;
+}
+
+.animationClass {
+    width: 200px;
+    background: lightgray;
+    margin: 100px auto;
+    text-align: center;
+    padding: 20px;
+    font-size: 2em;
+}
